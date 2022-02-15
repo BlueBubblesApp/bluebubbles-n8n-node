@@ -1,0 +1,62 @@
+{
+    "name": "n8n-nodes-bluebubbles",
+    "version": "0.0.1",
+    "description": "The n8n integration node for BlueBubbles brings automation to iMessage",
+    "license": "MIT",
+    "homepage": "https://bluebubbles.app",
+    "author": {
+        "name": "BlueBubbles Development Team",
+        "email": "bluebubblesapp@gmail.com"
+    },
+    "main": "index.js",
+    "scripts": {
+        "dev": "npm run watch",
+        "build": "tsc && gulp",
+        "tslint": "tslint -p tsconfig.json -c tslint.json",
+        "watch": "tsc --watch",
+        "test": "jest"
+    },
+    "files": [
+        "dist"
+    ],
+    "n8n": {
+        "credentials": [
+            "dist/credentials/BlueBubblesCredentials.credentials.js"
+        ],
+        "nodes": [
+            "dist/nodes/BlueBubblesNode/BlueBubblesNode.node.js"
+        ]
+    },
+    "devDependencies": {
+        "@types/express": "^4.17.6",
+        "@types/jest": "^24.0.18",
+        "@types/node": "^10.10.1",
+        "@types/request-promise-native": "^1.0.17",
+        "gulp": "^4.0.0",
+        "jest": "^24.9.0",
+        "n8n-workflow": "^0.11.0",
+        "ts-jest": "^24.0.2",
+        "tslint": "^5.17.0",
+        "typescript": "^3.7.5"
+    },
+    "dependencies": {
+        "n8n-core": "^0.10.0"
+    },
+    "jest": {
+        "transform": {
+            "^.+\\.tsx?$": "ts-jest"
+        },
+        "testURL": "http://localhost/",
+        "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+        "testPathIgnorePatterns": [
+            "/dist/",
+            "/node_modules/"
+        ],
+        "moduleFileExtensions": [
+            "ts",
+            "tsx",
+            "js",
+            "json"
+        ]
+    }
+}

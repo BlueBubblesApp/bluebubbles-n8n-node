@@ -1,0 +1,6 @@
+dist/credentials
+dist/nodes
+**/node_modules/
+**/tmp-*
+**/*.DS_Store
+.vscode/
